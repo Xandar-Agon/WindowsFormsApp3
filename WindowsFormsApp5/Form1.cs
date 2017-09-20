@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp3
+namespace WindowsFormsApp5
 {
     public partial class Form1 : Form
     {
@@ -17,15 +17,12 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        private void btn_mensagem_Click(object sender, EventArgs e)
+        private void btn_carrega_Click(object sender, EventArgs e)
         {
-            int resposta;
-            resposta = Convert.ToInt16(MessageBox.Show("Deseja Sair??", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Title = "Escolhe uma foto";
+            dlg.Filter = "Ficheiro Jpg(*.jpg)|*.jpg|Todos os ficheiros|*.*";
 
-            if (resposta == 6)
-            {
-                Application.Exit();
-            }
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp3
+namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
@@ -17,15 +17,18 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        private void btn_mensagem_Click(object sender, EventArgs e)
+        private void btn_jogar_Click(object sender, EventArgs e)
         {
-            int resposta;
-            resposta = Convert.ToInt16(MessageBox.Show("Deseja Sair??", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
+            Random rand = new Random();
 
-            if (resposta == 6)
+            for (int i = 1; i < 30; i++)
             {
-                Application.Exit();
+                lbl_num1.Text = rand.Next(1, 10).ToString();
+                System.Threading.Thread.Sleep(i*5);
+                this.Update();
             }
+
+            
         }
     }
 }
